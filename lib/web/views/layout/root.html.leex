@@ -12,8 +12,36 @@
     <% else %>
       <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/non_live.js") %>"></script>
     <% end %>
+    <style>
+      .section_starter {
+        position: relative;
+      }
+      .section_starter:before {
+        position: absolute;
+          content: "";
+          top: -110px;
+          width: 1px;
+          left: 50%;
+          height: 100px;
+          display: block;
+          background: linear-gradient(#e6646500, #9198e5);
+      }
+      .lined:after {
+        position: absolute;
+        background-image: url("../images/line.png");
+        bottom: -30px;
+        left: 0;
+        display: block;
+        right: 0;
+        height: 40px;
+        content: "";
+        background-size: contain;
+        background-position: bottom;
+        background-repeat: no-repeat;
+      }
+    </style>
   </head>
-  <body id="layout-root" class="overflow-hidden">
+  <body id="layout-root website" class="bg-white">
     <%= if Code.ensure_loaded?(Thesis.View), do: Thesis.View.thesis_editor(@conn) %>
     <%= @inner_content %>
   </body>
