@@ -1,9 +1,9 @@
 <!--  HEADER -->
-<div class="border-t-8 border-pink-600">
-<div class="rubik mt-28 container relative max-w-screen-lg mx-auto bg-white">
+<div>
+<div class="rubik mt-20 container relative max-w-screen-lg mx-auto bg-white">
   <div class="flex items-center justify-between md:justify-start md:space-x-10 lg:px-0">
       <div class="flex justify-start lg:w-0 lg:flex-1">
-        <a class="text-4xl text-red-800 font-bold" href="#">bonfire</a>
+        <a class="text-4xl text-gray-800 font-bold" href="/">🔥 bonfire</a>
       </div>
 
       <div class="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
@@ -19,8 +19,7 @@
               Blog
             </div>
           <% end %>
-          <div class="text-sm text-gray-700">
-
+          <div class="text-sm text-gray-700 flex items-center space-x-6">
             <a href="https://github.com/bonfire-ecosystem" target="blank" class="text-gray-400 hover:text-gray-500">
               <span class="sr-only">GitHub</span>
               <%= live_component(@socket, Bonfire.Website.Icons.GitLive, class: "w-6 h-6") %>
