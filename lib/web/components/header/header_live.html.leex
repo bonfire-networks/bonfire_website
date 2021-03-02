@@ -1,13 +1,13 @@
 <!--  HEADER -->
 <div>
-<div class="rubik mt-20 container relative max-w-screen-lg mx-auto bg-white">
+<div class="rubik mt-20 container relative max-w-screen-lg mx-auto bg-white px-6 lg:px-0">
   <div class="flex items-center justify-between md:justify-start md:space-x-10 lg:px-0">
       <div class="flex justify-start lg:w-0 lg:flex-1">
-        <a class="text-4xl text-gray-800 font-bold" href="/">🔥 bonfire</a>
+        <a class="text-2xl lg:text-4xl text-gray-800 font-bold" href="/">🔥 bonfire</a>
       </div>
 
-      <div class="items-center justify-end hidden md:flex md:flex-1 lg:w-0">
-        <nav class="flex items-center space-x-12">
+      <div class="items-center justify-end md:flex md:flex-1 lg:w-0">
+        <nav class="flex items-center space-x-4 lg:space-x-12">
 
           <%= live_redirect to: Routes.live_path(@socket, Bonfire.Website.Page.MilestonesLive ) do %>
             <div class="text-sm text-gray-600 hover:text-gray-800 px-3 py-2 font-medium text-sm rounded-md hover:bg-gray-200">
