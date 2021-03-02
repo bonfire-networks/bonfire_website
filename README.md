@@ -2,7 +2,8 @@
 
 An extension for [Bonfire](https://bonfire.cafe/) that handles:
 
-- UI components and views for the Bonfire website
+- UI components and views for the [Bonfire website](https://bonfire.cafe/)
+- Showing milestones and issues from github (requres a [personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) in config)
 
 
 ## Handy commands
