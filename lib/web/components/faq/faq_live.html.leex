@@ -38,9 +38,9 @@
           <dd
             x-show="openPanel === 0"
             class="mt-2 pr-12">
-            <p class="text-base text-gray-500">
+            <div class="prose">
               Yes, it is free/libre open source software, licensed primarly under the <a href="http://www.gnu.org/licenses/agpl-3.0.html" target="blank">AGPL</a>, meaning the source code is available and can be modified, and that all such changes, improvements, or additions should be contributed back to the community. Some Bonfire extensions or dependencies have other <a href="https://github.com/bonfire-ecosystem/bonfire-app/blob/main/DEPENDENCIES.m" target="blank">open source licenses</a>.
-            </p>
+            </div>
           </dd>
         </div>
 
@@ -74,11 +74,13 @@
           <dd
             x-show="openPanel === 1"
             class="mt-2 pr-12">
-            <p class="text-base text-gray-500">
-              Yes, there will always be options for using Bonfire at no cost (such as joining a friend's instance, or setting one up on a device or server that you already have). <br />
-              Optionally, some users may want to pay for the convenience of someone taking care of the infrastructure and technical labour. The Bonfire team (and probably others) will provide services for them. <br />
-              Please note, building software takes time, and while Bonfire is a work of love, the team appreciates your support in the form of contributions, financial or otherwise (such as feedback or improvements to the software).
-            </p>
+            <div class="prose">
+              <ul>
+                <li>Yes, there will always be options for using Bonfire at no cost (such as joining a friend's instance, or setting one up on a device or server that you already have). </li>
+                <li>Optionally, some users may want to pay for the convenience of someone taking care of the infrastructure and technical labour. The Bonfire team (and probably others) will provide services for them. </li>
+                <li>Please note, building software takes time, and while Bonfire is a work of love, the team appreciates your support in the form of contributions, financial or otherwise (such as feedback or improvements to the software).</li>
+              </ul>
+            </div>
           </dd>
         </div>
 
@@ -112,9 +114,9 @@
           <dd
             x-show="openPanel === 2"
             class="mt-2 pr-12">
-            <p class="text-base text-gray-500">
+            <div class="prose">
               No, the software or services provided by the Bonfire team will never include any type of advertisement or spy on users. If third party developers try to include any ads, Bonfire users will always have the freedom to use an alternative extension or fork it. Similarly, if a user or instance were used to post sponsored content, you could simply block them (we may also implement shared blocklists in future to help with this).
-            </p>
+            </div>
           </dd>
         </div>
 
@@ -148,9 +150,9 @@
           <dd
             x-show="openPanel === 3"
             class="mt-2 pr-12">
-            <p class="text-base text-gray-500">
-              Our main goal if for you to be in control so that you can know and decide who can see something before you post.
-            </p>
+            <div class="prose">
+              Our main goal if for you to be in control so that you can know and decide who can see something before you post. Now let’s get into the nitty gritty…
+            </div>
           </dd>
         </div>
 
@@ -184,10 +186,12 @@
           <dd
             x-show="openPanel === 5"
             class="mt-2 pr-12">
-            <p class="text-base text-gray-500">
-             Bonfire combines the power of federation and open data formats to create interoperable toolkits that people can use to easily build their own apps to meet their specific needs. Users are then free to interact with multiple people and groups using these apps hosted on their own device, regardless of what federated software these other people use.
-             Every line of Bonfire’s code is available to be used or forked, in a collection of libraries that can be assembled and re-assembled to create all kinds of full-featured apps.
-            </p>
+            <div class="prose">
+                <ul>
+                  <li>Bonfire combines the power of federation and open data formats to create interoperable toolkits that people can use to easily build their own apps to meet their specific needs. Users are then free to interact with multiple people and groups using these apps hosted on their own device, regardless of what federated software these other people use.</li>
+                  <li>Every line of Bonfire’s code is available to be used or forked, in a collection of libraries that can be assembled and re-assembled to create all kinds of full-featured apps.</li>
+                </ul>
+            </div>
           </dd>
         </div>
         <div class="pt-6">
@@ -220,14 +224,16 @@
           <dd
             x-show="openPanel === 4"
             class="mt-2 pr-12">
-            <p class="text-base text-gray-500">
-              The core team is made up of a collective of designers and developers which has been cooperating in various forms (and other names, the project was previously known as CommonsPub, itself a fork of what was then MoodleNet) since 2019, and started to rewrite and build Bonfire as a modular ecosystem at the end of 2020.  <br />
-              You? Bonfire is an ecosystem aimed to empower individuals and communities to shape and control their digital lives. Everyone is invited to participate in some way, whether that means contributing to the available extensions or making their own, that doesn't mean only coders, but really anyone who wants to get involved: users, instance admins, translators, designers, UX or accessibility testers, writers, activists, or anybody else who feels like they can offer something to move the project forward, or in another direction!
-            </p>
+             <div class="prose">
+                <ul>
+                  <li>The core team is made up of a collective of designers and developers which has been cooperating in various forms (and other names, the project was previously known as CommonsPub, itself a fork of what was then MoodleNet) since 2019, and started to rewrite and build Bonfire as a modular ecosystem at the end of 2020.</li>
+                  <li>You? Bonfire is an ecosystem aimed to empower individuals and communities to shape and control their digital lives. Everyone is invited to participate in some way, whether that means contributing to the available extensions or making their own, that doesn’t mean only coders, but really anyone who wants to get involved: users, instance admins, translators, designers, UX or accessibility testers, writers, activists, or anybody else who feels like they can offer something to move the project forward, or in another direction!</li>
+                </ul>
+            </div>
           </dd>
         </div>
       </dl>
-      <%= live_redirect to: Routes.live_path(@socket, Bonfire.Website.HomeGuestLive ) do %>
+      <%= live_redirect to: Routes.live_path(@socket, Bonfire.Website.Page.FaqLive ) do %>
         <div class="mt-12 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Read all the FAQs</div>
       <% end %>
     </div>
