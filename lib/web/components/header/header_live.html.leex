@@ -14,11 +14,16 @@
               Roadmap
             </div>
           <% end %>
-          <%= live_redirect to: Routes.live_path(@socket, Bonfire.Website.HomeGuestLive ) do %>
+          <%= live_redirect to: Routes.live_path(@socket, Bonfire.Website.Page.FaqLive ) do %>
             <div class="text-sm text-gray-600 hover:text-gray-800 px-3 py-2 font-medium text-sm rounded-md hover:bg-gray-200">
-              Blog
+              FAQ
             </div>
           <% end %>
+          <%# <%= live_redirect to: Routes.live_path(@socket, Bonfire.Website.HomeGuestLive ) do %>
+            <%# <div class="text-sm text-gray-600 hover:text-gray-800 px-3 py-2 font-medium text-sm rounded-md hover:bg-gray-200">
+              Blog
+            </div> %>
+          <%# end %>
           <div class="text-sm text-gray-700 flex items-center space-x-6">
             <a href="https://github.com/bonfire-ecosystem" target="blank" class="text-gray-400 hover:text-gray-500">
               <span class="sr-only">GitHub</span>
