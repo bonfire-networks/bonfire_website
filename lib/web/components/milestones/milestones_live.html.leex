@@ -2,36 +2,46 @@
 
   <div
     x-data="{ openPanel: 0, openIssuePanel: 0 }"
-    class="rubik max-w-screen-lg container mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+    class="container max-w-screen-lg px-4 py-12 mx-auto rubik sm:py-16 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200">
-      <h2 class="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
-        Milestones
+      <h2 class="pb-6 text-3xl font-bold text-left text-gray-800 border-b border-gray-800 sm:text-4xl">
+        Bonfire roadmap
       </h2>
 
-      <dl class="mt-6 space-y-6 divide-y divide-gray-200">
+      <div class="mt-6 space-y-6">
 
         <%= for %{"node" => milestone} <- @milestones do %>
 
         <!-- Start milestone -->
-        <div class="pt-6">
+        <div class="p-6 bg-gray-100 border border-gray-800 shadow-solid">
+          <div class="">
+            <span class="text-sm font-semibold text-indigo-600 uppercase"><%= e(milestone, "progressPercentage", "0") %>% Completed</span>
+            <div class="h-3 mt-1 bg-gray-200">
+              <span style="width: <%= e(milestone, "progressPercentage", "0") %>%" class="block h-3 bg-indigo-600"></span>
+            </div>
+          </div>
+          <h3 class="mt-3 text-2xl font-medium text-gray-900"><%= e(milestone, "title", "Unknown milestone") %></h3>
+          <div class="flex items-center mt-2">
+            <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+            <span class="ml-2 text-base font-semibold text-gray-500"><%= e(milestone, "dueOn", "No due date assigned") %></span>
+          </div>
+          <p class="w-full mt-2 prose"><%= e(milestone, "description", "The description was not provided") %></p>
+          
+          
           <dt class="text-lg">
             <!-- Expand/collapse milestone button -->
             <button
               x-description="Expand/collapse milestone"
               @click="openPanel = (openPanel === '<%= e(milestone, "id", 1) %>' ? null : '<%= e(milestone, "id", 1) %>')"
-              class="text-left w-full flex justify-between items-start text-gray-400">
-              <span class="font-medium text-gray-900">
-
-                <%= e(milestone, "title", "Unknown milestone") %>
-
-              </span>
-              <span class="ml-6 h-7 flex items-center">
+              class="flex items-start justify-between w-full pt-3 mt-4 text-left text-gray-700 border-t border-gray-800">
+              <span class="text-sm font-medium tracking-wider text-gray-700 uppercase">View all tasks</span>
+              <span class="flex items-center ml-6">
                 <svg
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
                   x-bind:class="{ '-rotate-180': openPanel === '<%= e(milestone, "id", 1) %>', 'rotate-0': !(openPanel === '<%= e(milestone, "id", 1) %>') }"
-                  class="-rotate-180 h-6 w-6 transform"
+                  class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -44,65 +54,30 @@
           </dt>
           <dd
             x-show="openPanel === '<%= e(milestone, "id", 1) %>'"
-            class="mt-2 pr-12">
-            <p class="text-base text-gray-500">
-
-              <%= e(milestone, "description", "") %>
-
+            class="pr-12 mt-2">
               <dl class="mt-6 space-y-6 divide-y divide-gray-200">
-
                 <%= for %{"node" => issue} <- e(milestone, "issues", "edges", []) do %>
                 <!-- Start issue -->
-
-                <div class="pt-6">
-                  <dt class="text-lg">
-                    <!-- Expand/collapse issue button -->
-                    <button
-                      x-description="Expand/collapse issue"
-                      @click="openIssuePanel = (openIssuePanel === '<%= e(issue, "id", 1) %>' ? null : '<%= e(issue, "id", 1) %>')"
-                      class="text-left w-full flex justify-between items-start text-gray-400">
-                      <span class="font-small text-gray-600">
-
-                        <%= e(issue, "title", "Unknown task") %>
-
-                      </span>
-                      <span class="ml-6 h-7 flex items-center">
-                        <svg
-                          x-description="Heroicon name: outline/chevron-down"
-                          x-state:on="Open"
-                          x-state:off="Closed"
-                          x-bind:class="{ '-rotate-180': openIssuePanel === '<%= e(issue, "id", 1) %>', 'rotate-0': !(openIssuePanel === '<%= e(issue, "id", 1) %>') }"
-                          class="-rotate-180 h-6 w-6 transform"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </span>
-                    </button>
-                  </dt>
-                  <dd
-                    x-show="openIssuePanel === '<%= e(issue, "id", 1) %>'"
-                    class="mt-2 pr-12">
-                    <p class="text-base text-gray-400">
-                      <%= raw e(issue, "bodyHTML", "") %>
-                    </p>
-                  </dd>
+                <div class="flex items-center pt-3">
+                  <%= if e(issue, "closed", "false") == true do %>
+                  <svg class="w-6 h-6 mr-3 text-green-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                  <% end %>
+                  <%= if e(issue, "closed", "false") != true do %>
+                  <svg class="w-6 h-6 mr-3 text-red-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+                  <% end %>
+                  <span class="flex-1 text-base text-gray-800 truncate hover:underline">
+                    <a target="blank" href="<%= e(issue, "url", "#") %>"> <%= e(issue, "title", "Unknown task") %></a>
+                  </span>
                 </div>
                 <% end %>
-
-
-            </p>
           </dd>
         </div>
         <% end %>
 
-      </dl>
+      </div>
 
       <%= link to: "https://github.com/bonfire-ecosystem/bonfire-app/issues/new/choose" do %>
-        <div class="mt-12 inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Suggest new feature    provide feedback</div>
+        <div class="items-center block w-full px-6 py-3 mt-12 text-base font-medium text-center text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Suggest new feature    provide feedback</div>
       <% end %>
     </div>
   </div>

@@ -15,12 +15,16 @@ defmodule Bonfire.Website.MilestonesLive do
               id
               title
               description
+              progressPercentage
+              dueOn
               issues(first:100) {
+                totalCount
                 edges {
                   node {
                     id
+                    url
                     title
-                    bodyHTML
+                    closed
                   }
                 }
               }
