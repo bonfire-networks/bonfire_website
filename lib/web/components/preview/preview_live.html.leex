@@ -87,42 +87,42 @@
 
     <div
       x-data="{tab: 'music'}"
-      class="grid grid-cols-6 gap-8 mt-12">
+      class="grid grid-cols-6 gap-8 mt-12 bg-pink-100 rounded-lg p-16">
       <div class="flex col-span-6 lg:col-span-3 place-content-center">
         <nav class="w-2/3">
           <div
             @click="tab = 'music'"
-            :class="{'shadow-xl bg-gray-100 cursor-default ': tab === 'music'}"
+            :class="{'shadow-xl bg-white cursor-default ': tab === 'music'}"
             class="group rounded px-4 py-3 flex items-center mb-6 cursor-pointer">
-            <svg :class="{'text-gray-800': tab === 'music'}" class="w-8 h-8 text-gray-300 group-hover:text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"></path></svg>
+            <svg :class="{'text-gray-800': tab === 'music'}" class="w-8 h-8 text-gray-600 group-hover:text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"></path></svg>
             <span :class="{'font-bold text-gray-800': tab === 'music'}" class="text-l text-gray-700 ml-2 group-hover:font-bold">Music or audios</span>
           </div>
           <div
             @click="tab = 'messages'"
-            :class="{'shadow-xl bg-gray-100 cursor-default ': tab === 'messages'}"
+            :class="{'shadow-xl bg-white cursor-default ': tab === 'messages'}"
             class="group rounded px-4 py-3 flex items-center mb-6 cursor-pointer">
-            <svg :class="{'text-gray-800': tab === 'messages'}" class="w-8 h-8 text-gray-300 group-hover:text-gray-600"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path></svg>
+            <svg :class="{'text-gray-800': tab === 'messages'}" class="w-8 h-8 text-gray-600 group-hover:text-gray-600"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd"></path></svg>
             <span :class="{'font-bold text-gray-800': tab === 'messages'}" class="text-l text-gray-700 ml-2 group-hover:font-bold">Messages or threads</span>
           </div>
           <div
             @click="tab = 'pictures'"
-            :class="{'shadow-xl bg-gray-100 cursor-default ': tab === 'pictures'}"
+            :class="{'shadow-xl bg-white cursor-default ': tab === 'pictures'}"
             class="group rounded px-4 py-3 flex items-center mb-6 cursor-pointer">
-            <svg :class="{'text-gray-800': tab === 'pictures'}" class="w-8 h-8 text-gray-300 group-hover:text-gray-600"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+            <svg :class="{'text-gray-800': tab === 'pictures'}" class="w-8 h-8 text-gray-600 group-hover:text-gray-600"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
             <span :class="{'font-bold text-gray-800': tab === 'pictures'}" class="text-l text-gray-700 ml-2 group-hover:font-bold">Pictures or videos</span>
           </div>
           <div
             @click="tab = 'courses'"
-            :class="{'shadow-xl bg-gray-100 cursor-default ': tab === 'courses'}"
+            :class="{'shadow-xl bg-white cursor-default ': tab === 'courses'}"
             class="group rounded px-4 py-3 flex items-center mb-6 cursor-pointer">
-            <svg :class="{'text-gray-800': tab === 'courses'}" class="w-8 h-8 text-gray-300 group-hover:text-gray-600"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path></svg>
+            <svg :class="{'text-gray-800': tab === 'courses'}" class="w-8 h-8 text-gray-600 group-hover:text-gray-600"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path></svg>
             <span :class="{'font-bold text-gray-800': tab === 'courses'}" class="text-l text-gray-700 ml-2 group-hover:font-bold">Courses or meetings</span>
           </div>
           <div
             @click="tab = 'git'"
-            :class="{'shadow-xl bg-gray-100 cursor-default ': tab === 'git'}"
+            :class="{'shadow-xl bg-white cursor-default ': tab === 'git'}"
             class="group rounded px-4 py-3 flex items-center mb-6 cursor-pointer">
-            <svg :class="{'text-gray-800': tab === 'git'}" class="w-8 h-8 text-gray-300 group-hover:text-gray-600"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z" clip-rule="evenodd"></path></svg>
+            <svg :class="{'text-gray-800': tab === 'git'}" class="w-8 h-8 text-gray-600 group-hover:text-gray-600"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z" clip-rule="evenodd"></path></svg>
             <span :class="{'font-bold text-gray-800': tab === 'git'}" class="text-l text-gray-700 ml-2 group-hover:font-bold">Polls or voting</span>
           </div>
         </nav>
