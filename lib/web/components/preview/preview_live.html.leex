@@ -48,7 +48,7 @@
     </div>
   </div>
 
-  <div class="bg-indigo-600 p-10 shadow-tick rounded mt-20 relative">
+  <div class="bg-indigo-600 shadow-solid p-10 rounded mt-20 relative">
     <span class="block uppercase tracking-wider text-gray-100 text-sm mb-2">You’re in the driver’s seat</span>
     <h2 class="items-center text-2xl font-bold tracking-wide text-gray-100 sm:text-3xl md:text-2xl w-2/3">
       Setup and control your own Bonfire
@@ -87,7 +87,7 @@
 
     <div
       x-data="{tab: 'music'}"
-      class="grid grid-cols-6 gap-8 mt-12 bg-pink-100 rounded-lg p-16">
+      class="grid grid-cols-6 gap-8 mt-12 bg-pink-100 shadow-solid rounded-lg p-16">
       <div class="flex col-span-6 lg:col-span-3 place-content-center">
         <nav class="w-2/3">
           <div
@@ -122,8 +122,10 @@
             @click="tab = 'git'"
             :class="{'shadow-xl bg-white cursor-default ': tab === 'git'}"
             class="group rounded px-4 py-3 flex items-center mb-6 cursor-pointer">
-            <svg :class="{'text-gray-800': tab === 'git'}" class="w-8 h-8 text-gray-600 group-hover:text-gray-600"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5 8.274l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L5 10.274zm10 0l-.818 2.552c.25.112.526.174.818.174.292 0 .569-.062.818-.174L15 10.274z" clip-rule="evenodd"></path></svg>
-            <span :class="{'font-bold text-gray-800': tab === 'git'}" class="text-l text-gray-700 ml-2 group-hover:font-bold">Polls or voting</span>
+            <svg :class="{'text-gray-800': tab === 'git'}" class="w-8 h-8 text-gray-600 group-hover:text-gray-600"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+            </svg>
+            <span :class="{'font-bold text-gray-800': tab === 'git'}" class="text-l text-gray-700 ml-2 group-hover:font-bold">Version control</span>
           </div>
         </nav>
       </div>
@@ -139,8 +141,9 @@
         </p>
 
         <div class="mt-8">
-          <a href="https://funkwhale.audio" target="blank">
-            <img width="260" src="https://funkwhale.audio/img/with-text-500.4aff7861.png" alt="funkwhale logo" />
+          <a class="flex items-center" href="https://funkwhale.audio" target="blank">
+            <img width="40" src="https://funkwhale.audio/img/logos/icon.svg" alt="funkwhale logo" />
+            <span class="ml-3 text-lg text-gray-800 font-semibold">funkwhale</span>
           </a>
         </div>
 
@@ -149,61 +152,99 @@
         x-show="tab === 'messages'"
         class="col-span-6 lg:col-span-3">
         <h3 class="text-2xl font-bold tracking-wide text-gray-800 sm:text-3xl md:text-2xl">
-          Messages or threads
+          Social networks or blogs
         </h3>
         <p class="max-w-md mx-auto mt-3 text-gray-800 sm:text-base md:mt-2 md:max-w-3xl">
           text text text text text text text text text text text text text text text text text text text text
         </p>
 
-        <div class="mt-8 flex items-center space-x-3">
-          <a href="https://diasporafoundation.org" target="blank">
-            <img width="260" src="https://diasporafoundation.org/assets/logo-e280790b46ace035cde8657c606b7b8cf6d925c7313a48f3d53a6340f59d5dfd.png" alt="diaspora logo" />
-          </a>
-          <a href="https://gnu.io" target="blank">
-            <img width="260" src="https://gnu.io/images/gnusocial.png" alt="diaspora logo" />
-          </a>
-          <a href="https://diasporafoundation.org" target="blank">
-            <img width="260" src="https://framagit.org/hubzilla/hubzilla-website/raw/master/assets/img/newhubzillabanner.png" alt="diaspora logo" />
-          </a>
-          <a href="https://diasporafoundation.org" target="blank">
-            <img width="260" src="https://joinmastodon.org/static/media/logo_full.97822390.svg" alt="diaspora logo" />
-          </a>
-          <a href="https://diasporafoundation.org" target="blank">
-            <img width="260" src="https://pleroma.social/images/pleroma_logo_vector_nobg_nopan-29fbf721.svg" alt="diaspora logo" />
-          </a>
+        <div class="mt-8 flex items-center space-x-4">
+          <div class="mb-4">
+            <a class="flex items-center" href="https://join.misskey.page/en/" target="blank">
+              <img width="40" src="data:image/png;base64,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" alt="misskey logo" />
+            </a>
+          </div>
+          <div class="mb-4">
+            <a class="flex items-center" href="https://joinmastodon.org" target="blank">
+              <img width="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Mastodon_Logotype_%28Simple%29.svg/432px-Mastodon_Logotype_%28Simple%29.svg.png" alt="mastodon logo" />
+            </a>
+          </div>
+          <div class="mb-4">
+            <a class="flex items-center" href="https://pleroma.com/" target="blank">
+              <img style="height: 40px" width="40" src="https://pleroma.social/images/pleroma_logo_vector_nobg_nopan-29fbf721.svg" alt="pleroma logo" />
+            </a>
+          </div>
+          <div class="mb-4">
+            <a class="flex items-center" href="https://write.as/" target="blank">
+              <img style="height: 40px" width="40" src="data:image/jpeg;base64,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" alt="writeas logo" />
+            </a>
+          </div>
         </div>
 
 
       </div>
       <div
         x-show="tab === 'pictures'"
-        class="self-center col-span-6 lg:col-span-3">
+        class="col-span-6 lg:col-span-3">
         <h3 class="text-2xl font-bold tracking-wide text-gray-800 sm:text-3xl md:text-2xl">
           Pictures or videos
         </h3>
-        <p class="max-w-md mx-auto mt-3 text-sm text-gray-800 sm:text-lg md:mt-6 md:max-w-3xl">
-          You don’t need to be on a centralized and proprietary social network to connect with the rest of the world. Bonfire uses the ActivityPub protocol to connect with users of all the other <a href="https://fediverse.party/en/miscellaneous" target="blank">platforms</a> in the <a href="https://en.wikipedia.org/wiki/Fediverse" target="blank">fediverse</a> from your own instance.
+         <p class="max-w-md mx-auto mt-3 text-gray-800 sm:text-base md:mt-2 md:max-w-3xl">
+          text text text text text text text text text text text text text text text text text text text text
         </p>
+
+        <div class="mt-8 flex items-center space-x-4">
+          <div class="mb-4">
+            <a class="flex items-center" href="https://joinpeertube.org/" target="blank">
+              <img width="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Logo_de_PeerTube.svg/512px-Logo_de_PeerTube.svg.png" alt="peertube logo" />
+            </a>
+          </div>
+          <div class="mb-4">
+            <a class="flex items-center" href="https://pixelfed.social/" target="blank">
+              <img style="height: 40px" width="40" src="data:image/png;base64,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" alt="pixelfed logo" />
+            </a>
+          </div>
+        </div>
+
       </div>
       <div
         x-show="tab === 'courses'"
-        class="self-center col-span-6 lg:col-span-3">
+        class="col-span-6 lg:col-span-3">
         <h3 class="text-2xl font-bold tracking-wide text-gray-800 sm:text-3xl md:text-2xl">
           Courses or meetings
         </h3>
-        <p class="max-w-md mx-auto mt-3 text-sm text-gray-800 sm:text-lg md:mt-6 md:max-w-3xl">
-          You don’t need to be on a centralized and proprietary social network to connect with the rest of the world. Bonfire uses the ActivityPub protocol to connect with users of all the other <a href="https://fediverse.party/en/miscellaneous" target="blank">platforms</a> in the <a href="https://en.wikipedia.org/wiki/Fediverse" target="blank">fediverse</a> from your own instance.
+         <p class="max-w-md mx-auto mt-3 text-gray-800 sm:text-base md:mt-2 md:max-w-3xl">
+          text text text text text text text text text text text text text text text text text text text text
         </p>
+
+        <div class="mt-8 flex items-center space-x-4">
+          <div class="mb-4">
+            <a class="flex items-center" href="https://mobilizon.org/" target="blank">
+              <img width="240" src="https://mobilizon.org/img/logo-mbz-purple.svg" alt="mobilizon logo" />
+            </a>
+          </div>
+        </div>
+
       </div>
       <div
         x-show="tab === 'git'"
-        class="self-center col-span-6 lg:col-span-3">
+        class="col-span-6 lg:col-span-3">
         <h3 class="text-2xl font-bold tracking-wide text-gray-800 sm:text-3xl md:text-2xl">
-          Code repositories
+          Version controls
         </h3>
-        <p class="max-w-md mx-auto mt-3 text-sm text-gray-800 sm:text-lg md:mt-6 md:max-w-3xl">
-          You don’t need to be on a centralized and proprietary social network to connect with the rest of the world. Bonfire uses the ActivityPub protocol to connect with users of all the other <a href="https://fediverse.party/en/miscellaneous" target="blank">platforms</a> in the <a href="https://en.wikipedia.org/wiki/Fediverse" target="blank">fediverse</a> from your own instance.
+         <p class="max-w-md mx-auto mt-3 text-gray-800 sm:text-base md:mt-2 md:max-w-3xl">
+          text text text text text text text text text text text text text text text text text text text text
         </p>
+
+        <div class="mt-8 flex items-center space-x-4">
+          <div class="mb-4">
+            <a class="flex items-center" href="https://forgefed.peers.community/" target="blank">
+              <img width="240" src="https://forgefed.peers.community/logo-with-name.svg" alt="forgefed logo" />
+            </a>
+          </div>
+        </div>
+
+
       </div>
 
 
