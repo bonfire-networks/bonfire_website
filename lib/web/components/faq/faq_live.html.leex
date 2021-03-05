@@ -3,11 +3,11 @@
   <div
     x-data="{ openPanel: 0 }"
     class="rubik max-w-screen-lg container mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200">
-      <h2 class="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
+    <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200 dark:divide-gray-600">
+      <h2 class="text-center text-3xl font-extrabold text-gray-900 dark:text-gray-100 sm:text-4xl">
         Frequently asked questions
       </h2>
-      <dl class="mt-6 space-y-6 divide-y divide-gray-200">
+      <dl class="mt-6 space-y-6 divide-y divide-gray-200 dark:divide-gray-600">
         <div class="pt-6">
           <dt class="text-lg">
             <!-- Expand/collapse question button -->
@@ -15,7 +15,7 @@
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 0 ? null : 0)"
               class="text-left w-full flex justify-between items-start text-gray-400">
-              <span class="font-medium text-gray-900">
+              <span class="font-medium text-gray-900 dark:text-gray-100">
                 Is bonfire open source?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -38,7 +38,7 @@
           <dd
             x-show="openPanel === 0"
             class="mt-2 pr-12">
-            <div class="prose">
+            <div class="prose dark:prose-light">
               Yes, it is free/libre open source software, licensed primarly under the <a href="http://www.gnu.org/licenses/agpl-3.0.html" target="blank">AGPL</a>, meaning the source code is available and can be modified, and that all such changes, improvements, or additions should be contributed back to the community. Some Bonfire extensions or dependencies have other <a href="https://github.com/bonfire-ecosystem/bonfire-app/blob/main/DEPENDENCIES.m" target="blank">open source licenses</a>.
             </div>
           </dd>
@@ -51,7 +51,7 @@
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 1 ? null : 1)"
               class="text-left w-full flex justify-between items-start text-gray-400">
-              <span class="font-medium text-gray-900">
+              <span class="font-medium text-gray-900 dark:text-gray-100">
                 Is it free to use?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -74,7 +74,7 @@
           <dd
             x-show="openPanel === 1"
             class="mt-2 pr-12">
-            <div class="prose">
+            <div class="prose dark:prose-light">
               <ul>
                 <li>Yes, there will always be options for using Bonfire at no cost (such as joining a friend's instance, or setting one up on a device or server that you already have). </li>
                 <li>Optionally, some users may want to pay for the convenience of someone taking care of the infrastructure and technical labour. The Bonfire team (and probably others) will provide services for them. </li>
@@ -91,7 +91,7 @@
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 2 ? null : 2)"
               class="text-left w-full flex justify-between items-start text-gray-400">
-              <span class="font-medium text-gray-900">
+              <span class="font-medium text-gray-900 dark:text-gray-100">
                 Will there be any ads, tracking, or sponsored content?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -114,7 +114,7 @@
           <dd
             x-show="openPanel === 2"
             class="mt-2 pr-12">
-            <div class="prose">
+            <div class="prose dark:prose-light">
               No, the software or services provided by the Bonfire team will never include any type of advertisement or spy on users. If third party developers try to include any ads, Bonfire users will always have the freedom to use an alternative extension or fork it. Similarly, if a user or instance were used to post sponsored content, you could simply block them (we may also implement shared blocklists in future to help with this).
             </div>
           </dd>
@@ -127,7 +127,7 @@
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 3 ? null : 3)"
               class="text-left w-full flex justify-between items-start text-gray-400">
-              <span class="font-medium text-gray-900">
+              <span class="font-medium text-gray-900 dark:text-gray-100">
                 Who can see my data?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -150,7 +150,7 @@
           <dd
             x-show="openPanel === 3"
             class="mt-2 pr-12">
-            <div class="prose">
+            <div class="prose dark:prose-light">
               Our main goal if for you to be in control so that you can know and decide who can see something before you post. Now let’s get into the nitty gritty…
             </div>
           </dd>
@@ -163,7 +163,7 @@
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 5 ? null : 5)"
               class="text-left w-full flex justify-between items-start text-gray-400">
-              <span class="font-medium text-gray-900">
+              <span class="font-medium text-gray-900 dark:text-gray-100">
                 Modular ecosystem? What do you mean?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -186,7 +186,7 @@
           <dd
             x-show="openPanel === 5"
             class="mt-2 pr-12">
-            <div class="prose">
+            <div class="prose dark:prose-light">
                 <ul>
                   <li>Bonfire combines the power of federation and open data formats to create interoperable toolkits that people can use to easily build their own apps to meet their specific needs. Users are then free to interact with multiple people and groups using these apps hosted on their own device, regardless of what federated software these other people use.</li>
                   <li>Every line of Bonfire’s code is available to be used or forked, in a collection of libraries that can be assembled and re-assembled to create all kinds of full-featured apps.</li>
@@ -201,7 +201,7 @@
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 4 ? null : 4)"
               class="text-left w-full flex justify-between items-start text-gray-400">
-              <span class="font-medium text-gray-900">
+              <span class="font-medium text-gray-900 dark:text-gray-100">
                 Who is building Bonfire?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -224,7 +224,7 @@
           <dd
             x-show="openPanel === 4"
             class="mt-2 pr-12">
-             <div class="prose">
+             <div class="prose dark:prose-light">
                 <ul>
                   <li>The core team is made up of a collective of designers and developers which has been cooperating in various forms (and other names, the project was previously known as CommonsPub, itself a fork of what was then MoodleNet) since 2019, and started to rewrite and build Bonfire as a modular ecosystem at the end of 2020.</li>
                   <li>You? Bonfire is an ecosystem aimed to empower individuals and communities to shape and control their digital lives. Everyone is invited to participate in some way, whether that means contributing to the available extensions or making their own, that doesn’t mean only coders, but really anyone who wants to get involved: users, instance admins, translators, designers, UX or accessibility testers, writers, activists, or anybody else who feels like they can offer something to move the project forward, or in another direction!</li>

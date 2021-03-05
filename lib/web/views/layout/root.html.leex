@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+  x-data="{
+    theme: JSON.parse(localStorage.getItem('bonfire_theme')) ? JSON.parse(localStorage.getItem('bonfire_theme')) : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : null}"
+  x-init="() => {
+    $watch('theme', (val) => localStorage.setItem('bonfire_theme', JSON.stringify(val)))
+  }"
+  lang="en"
+  :class="{'dark' : theme === 'dark'}"
+  >
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -42,7 +50,8 @@
       }
     </style>
   </head>
-  <body id="layout-root website" class="bg-white">
+  <body
+   id="layout-root website" class="bg-white dark:bg-gray-800">
     <%= if Code.ensure_loaded?(Thesis.View), do: Thesis.View.thesis_editor(@conn) %>
     <%= @inner_content %>
   </body>

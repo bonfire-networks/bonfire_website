@@ -1,21 +1,21 @@
 <!--  HEADER -->
 <div>
-<div class="rubik mt-20 container relative max-w-screen-lg mx-auto bg-white px-6 lg:px-0">
+<div class="rubik mt-20 container relative max-w-screen-lg mx-auto bg-white dark:bg-gray-800 px-6 lg:px-0">
   <div class="flex items-center justify-between md:justify-start md:space-x-10 lg:px-0">
       <div class="flex justify-start lg:w-0 lg:flex-1">
-        <a class="text-2xl lg:text-2xl text-gray-800 font-bold" href="/">🔥 bonfire</a>
+        <a class="text-2xl lg:text-2xl text-gray-800 dark:text-gray-100 font-bold" href="/">🔥 bonfire</a>
       </div>
 
       <div class="items-center justify-end md:flex md:flex-1 lg:w-0">
         <nav class="flex items-center space-x-4 lg:space-x-12">
 
           <%= live_redirect to: Routes.live_path(@socket, Bonfire.Website.Page.MilestonesLive ) do %>
-            <div class="text-sm text-gray-600 hover:text-gray-800 px-3 py-2 font-medium text-sm rounded-md hover:bg-gray-200">
+            <div class="text-sm text-gray-600 dark:text-gray-100 hover:text-gray-800 dark-hover:text-gray-100 dark:hover:bg-gray-700 px-3 py-2 font-medium text-sm rounded-md hover:bg-gray-200">
               Roadmap
             </div>
           <% end %>
           <%= live_redirect to: Routes.live_path(@socket, Bonfire.Website.Page.FaqLive ) do %>
-            <div class="text-sm text-gray-600 hover:text-gray-800 px-3 py-2 font-medium text-sm rounded-md hover:bg-gray-200">
+            <div class="text-sm text-gray-600 dark:text-gray-100 hover:text-gray-800 dark-hover:text-gray-100 dark:hover:bg-gray-700 px-3 py-2 font-medium text-sm rounded-md hover:bg-gray-200">
               FAQ
             </div>
           <% end %>
@@ -34,8 +34,29 @@
               <span class="sr-only">Fediverse</span>
               <%= live_component(@socket, Bonfire.Website.Icons.FediverseLive, class: "w-6 h-6") %>
             </a>
-
           </div>
+<%#
+          <button
+            x-show="theme === 'dark'"
+            type="button"
+            @click="theme = 'light'"
+            class="group rounded-md border border-transparent focus:bg-gray-100 focus:outline-none dark:focus:bg-black dark:focus:border-gray-800 text-gray-400">
+            <span class="sr-only">
+              <span class="dark:hidden">Switch to <span x-text="theme"></span> theme</span>
+            </span>
+            <svg width="34" height="34" viewBox="-5 -5 34 34" stroke-width="0" class="fill-gray-400 group-hover:fill-gray-500 group-focus:fill-gray-500 dark:fill-gray-500 dark:group-hover:fill-gray-400 dark:group-focus:fill-gray-400">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+            </svg>
+          </button> %>
+          <button
+            @click="{theme === 'dark' ? theme = 'light' : theme = 'dark'}"
+            type="button"
+            class="group rounded-md border border-transparent focus:bg-gray-100 focus:outline-none dark:focus:bg-gray-700 dark:focus:border-gray-700 text-gray-400">
+            <span class="sr-only">
+              <span class="dark:hidden">Switch to <span x-text="theme"></span> theme</span>
+            </span>
+            <svg width="34" height="34" viewBox="-5 -5 34 34" stroke-width="0" class="fill-gray-400 group-hover:fill-gray-500 group-focus:fill-gray-500 dark:fill-gray-500 dark:group-hover:fill-gray-400 dark:group-focus:fill-gray-400"><g class="dark:opacity-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.353 2.939a1 1 0 01.22 1.08 8 8 0 0010.408 10.408 1 1 0 011.301 1.3A10.003 10.003 0 0112 22C6.477 22 2 17.523 2 12c0-4.207 2.598-7.805 6.273-9.282a1 1 0 011.08.22z"></path></g><g class="opacity-0 dark:opacity-100"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zM4.929 4.929a1 1 0 011.414 0l.707.707A1 1 0 115.636 7.05l-.707-.707a1 1 0 010-1.414zm14.142 0a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM7 12a5 5 0 1110 0 5 5 0 01-10 0zm-5 0a1 1 0 011-1h1a1 1 0 110 2H3a1 1 0 01-1-1zm17 0a1 1 0 011-1h1a1 1 0 110 2h-1a1 1 0 01-1-1zm-2.05 4.95a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zm-11.314 0a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707zM12 19a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1z"></path></g></svg>
+          </button>
         </nav>
       </div>
 
