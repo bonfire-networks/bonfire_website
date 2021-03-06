@@ -60,7 +60,7 @@ defmodule Bonfire.Website.MilestonesLive do
 
   def in_progress(labels) do
     Enum.find(labels, fn(element) ->
-      match?(%{"node"=> %{"name"=> "In Progress"}}, element) |> IO.inspect
+      match?(%{"node"=> %{"name"=> "In Progress"}}, element)
     end)
   end
 
