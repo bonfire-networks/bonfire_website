@@ -25,6 +25,14 @@ defmodule Bonfire.Website.MilestonesLive do
                     url
                     title
                     closed
+                    labels(first:10) {
+                      edges {
+                        node {
+                          id
+                          name
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -48,6 +56,12 @@ defmodule Bonfire.Website.MilestonesLive do
       )
     }
 
+  end
+
+  def in_progress(labels) do
+    Enum.find(labels, fn(element) ->
+      match?(%{"node"=> %{"name"=> "In Progress"}}, element) |> IO.inspect
+    end)
   end
 
 end
