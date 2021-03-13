@@ -19,7 +19,6 @@ defmodule Bonfire.Website.Web.Routes do
         live "/milestones", Page.MilestonesLive
       end
 
-
     end
   end
 end

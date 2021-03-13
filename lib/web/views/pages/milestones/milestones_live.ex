@@ -1,7 +1,7 @@
 defmodule Bonfire.Website.Page.MilestonesLive do
   use Bonfire.Web, {:live_view, [layout: {Bonfire.Website.LayoutView, "live.html"}]}
   alias Bonfire.Me.Fake
-  alias Bonfire.Common.Web.LivePlugs
+  alias Bonfire.Web.LivePlugs
   alias Bonfire.Me.Users
   alias Bonfire.Me.Web.{CreateUserLive, LoggedDashboardLive}
   alias Bonfire.Website.{MilestonesLive, HeaderLive, AppsPreviewLive,  FooterLive, FaqLive, HeroLive, PreviewLive, DevicePreviewLive, BlogPreviewLive}
