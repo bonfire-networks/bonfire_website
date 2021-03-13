@@ -3,6 +3,10 @@ defmodule Bonfire.Website.Web.Routes do
 
     quote do
 
+      pipeline :website do
+        plug :put_root_layout, {Bonfire.Website.LayoutView, :root}
+      end
+
       alias Bonfire.Website.Web.Routes.Helpers, as: WebsiteRoutes
 
       # bonfire_website extension - anyone can view
