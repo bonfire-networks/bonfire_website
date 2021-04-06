@@ -58,10 +58,17 @@ defmodule Bonfire.Website.MilestonesLive do
 
   end
 
-  def in_progress(labels) do
+  def task_in_progress?(%{"labels"=> %{"edges"=> labels}}) do
     Enum.find(labels, fn(element) ->
       match?(%{"node"=> %{"name"=> "In Progress"}}, element)
     end)
   end
+
+  def milestone_in_progress(%{"issues"=> %{"edges"=> issues}}) do
+    total = Enum.count(issues)
+    in_progress = Enum.map(issues, &task_in_progress?(&1["node"])) |> Enum.filter(& &1) |> Enum.count
+    if in_progress > 0, do: (total / in_progress)
+  end
+
 
 end
