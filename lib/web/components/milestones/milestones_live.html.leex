@@ -18,7 +18,7 @@
           <h3 class="mt-3 text-2xl font-medium text-gray-900"><%= e(milestone, :title, "Unknown milestone") %></h3>
 
           <div class="">
-            <div class="text-sm font-semibold text-indigo-600 uppercase text-right"><%= round(e(milestone, :progressPercentage, 0.0)) %>% Completed - <%= round(milestone_in_progress(milestone))%>% In Progress</div>
+            <div class="text-sm font-semibold text-indigo-600 uppercase text-right"><%= round(e(milestone, :progressPercentage, 0.0)) %>% Completed - <%= round(milestone_in_progress(milestone)*100)%>% In Progress</div>
             <div class="h-3 mt-1 bg-gray-200">
               <span style="width: <%= e(milestone, "progressPercentage", "0") %>%" class="block h-3 bg-indigo-600"></span>
             </div>
