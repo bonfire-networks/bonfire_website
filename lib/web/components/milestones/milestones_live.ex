@@ -7,7 +7,7 @@ defmodule Bonfire.Website.MilestonesLive do
    milestones = with token <- Bonfire.Common.Config.get!(:github_token),
    {:ok, %{body: body}} <- Neuron.query("""
     query {
-      repository(name:"bonfire-app", owner:"bonfire-ecosystem") {
+      repository(name:"bonfire-app", owner:"bonfire-networks") {
         id
         milestones(first:50) {
           edges {
