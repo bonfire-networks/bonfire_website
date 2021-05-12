@@ -22,19 +22,6 @@
       <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.1/dist/alpine.min.js" defer></script>
     <% end %>
     <style>
-      .section_starter {
-        position: relative;
-      }
-      .section_starter:before {
-        position: absolute;
-          content: "";
-          top: -110px;
-          width: 1px;
-          left: 50%;
-          height: 100px;
-          display: block;
-          background: linear-gradient(#e6646500, #9198e5);
-      }
       .lined:after {
         position: absolute;
         background-image: url("../images/line.png");
@@ -50,8 +37,7 @@
       }
     </style>
   </head>
-  <body
-   id="layout-root website" class="bg-white dark:bg-gray-800">
+  <body id="layout-root website" class="bg-white dark:bg-gray-800">
     <%= if Code.ensure_loaded?(Thesis.View), do: Thesis.View.thesis_editor(@conn) %>
     <%= @inner_content %>
   </body>
