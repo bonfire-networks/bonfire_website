@@ -7,8 +7,6 @@ defmodule Bonfire.Website.Web.Routes do
         plug :put_root_layout, {Bonfire.Website.LayoutView, :root}
       end
 
-      alias Bonfire.Website.Web.Routes.Helpers, as: WebsiteRoutes
-
       # bonfire_website extension - anyone can view
       scope "/", Bonfire.Website do
         pipe_through :browser
