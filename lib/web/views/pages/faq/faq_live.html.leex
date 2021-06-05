@@ -1,4 +1,4 @@
-<%= live_component(@socket, HeaderLive, assigns) %>
+<%= live_component(@socket, HeaderLive, assigns_clean(assigns)) %>
 
   <div
     x-data="{ openPanel: 0 }"
@@ -643,4 +643,4 @@
   </div>
 
 
-<%= live_component(@socket, FooterLive, assigns) %>
+<%= live_component(@socket, FooterLive, assigns_clean(assigns)) %>

@@ -1,4 +1,4 @@
-<%= live_component(@socket, HeaderLive, assigns) %>
-<%= live_component(@socket, MilestonesLive, assigns) %>
+<%= live_component(@socket, HeaderLive, assigns_clean(assigns)) %>
+<%= live_component(@socket, MilestonesLive, assigns_clean(assigns)) %>
 
-<%= live_component(@socket, FooterLive, assigns) %>
+<%= live_component(@socket, FooterLive, assigns_clean(assigns)) %>

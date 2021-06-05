@@ -1,6 +1,6 @@
-<%= live_component(@socket, HeaderLive, assigns) %>
-<%= live_component(@socket, HeroLive, assigns) %>
-<%= live_component(@socket, PreviewLive, assigns) %>
-<%# = live_component(@socket, BlogPreviewLive, assigns) %>
-<%= live_component(@socket, FaqLive, assigns) %>
-<%= live_component(@socket, FooterLive, assigns) %>
+<%= live_component(@socket, HeaderLive, assigns_clean(assigns)) %>
+<%= live_component(@socket, HeroLive, assigns_clean(assigns)) %>
+<%= live_component(@socket, PreviewLive, assigns_clean(assigns)) %>
+<%# = live_component(@socket, BlogPreviewLive, assigns_clean(assigns)) %>
+<%= live_component(@socket, FaqLive, assigns_clean(assigns)) %>
+<%= live_component(@socket, FooterLive, assigns_clean(assigns)) %>
