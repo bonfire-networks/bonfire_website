@@ -20,7 +20,7 @@
           <div class="">
             <div class="text-sm font-semibold text-indigo-600 uppercase text-right"><%= round(e(milestone, :progressPercentage, 0.0)) %>% Completed - <%= round(milestone_in_progress(milestone)*100)%>% In Progress</div>
             <div class="h-3 mt-1 bg-gray-200">
-              <span style="width: <%= e(milestone, "progressPercentage", "0") %>%" class="block h-3 bg-indigo-600"></span>
+              <span style={"width: "<> e(milestone, "progressPercentage", "0")} class="block h-3 bg-indigo-600"></span>
             </div>
           </div>
 
@@ -38,7 +38,7 @@
             <!-- Expand/collapse milestone button -->
             <button
               x-description="Expand/collapse milestone"
-              @click="openPanel = (openPanel === '<%= e(milestone, :id, 1) %>' ? null : '<%= e(milestone, :id, 1) %>')"
+              @click={"openPanel = (openPanel === '"<> e(milestone, :id, 1) <>"' ? null : '"<> e(milestone, :id, 1) <>"')"}
               class="flex items-start justify-between w-full pt-3 mt-4 text-left text-gray-700 border-t border-gray-800">
               <span class="text-sm font-medium tracking-wider text-gray-700 uppercase">Tasks</span>
               <span class="flex items-center ml-6">
@@ -46,7 +46,7 @@
                   x-description="Heroicon name: outline/chevron-down"
                   x-state:on="Open"
                   x-state:off="Closed"
-                  x-bind:class="{ '-rotate-180': openPanel === '<%= e(milestone, :id, 1) %>', 'rotate-0': !(openPanel === '<%= e(milestone, "id", 1) %>') }"
+                  x-bind:class={"{ '-rotate-180': openPanel === '"<> e(milestone, :id, 1) <>"', 'rotate-0': !(openPanel === '"<> e(milestone, "id", 1) <>"') }"}
                   class="w-6 h-6 transform -rotate-180"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -59,7 +59,7 @@
             </button>
           </dt>
           <dd
-            x-show="openPanel === '<%= e(milestone, "id", 1) %>'"
+            x-show={"openPanel === '"<> e(milestone, "id", 1) <>"'"}
             class="pr-12 mt-2">
               <dl class="mt-6 space-y-6 divide-y divide-gray-200">
 
@@ -83,10 +83,11 @@
                   <% end %>
 
                   <span class="flex-1 text-base text-gray-800 truncate hover:underline">
-                    <a target="blank" href="<%= e(issue, :url, "#") %>"> <%= e(issue, :title, "Unknown task") %></a>
+                    <a target="blank" href={ e(issue, :url, "#")}> <%= e(issue, :title, "Unknown task") %></a>
                   </span>
                 </div>
                 <% end %>
+              </dl>
           </dd>
         </div>
         <% end %>
