@@ -4,7 +4,7 @@
     x-data="{ openPanel: 0, openIssuePanel: 0 }"
     class="container max-w-screen-lg px-4 py-12 mx-auto rubik sm:py-16 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200">
-      <h2 class="pb-6 text-3xl font-bold text-left text-gray-800 border-b border-gray-800 sm:text-4xl">
+      <h2 class="pb-6 text-3xl font-bold text-left text-primary-content-800 border-b border-gray-800 sm:text-4xl">
         Bonfire roadmap
       </h2>
 
@@ -13,21 +13,21 @@
         <%= for %{"node" => milestone} <- @milestones do %>
 
         <!-- Start milestone -->
-        <div class="p-6 bg-gray-100 border border-gray-800 shadow-solid">
+        <div class="p-6 bg-neutral border border-gray-800 shadow-solid">
 
-          <h3 class="mt-3 text-2xl font-medium text-gray-900"><%= e(milestone, :title, "Unknown milestone") %></h3>
+          <h3 class="mt-3 text-2xl font-medium text-primary-content-900"><%= e(milestone, :title, "Unknown milestone") %></h3>
 
           <div class="">
             <div class="text-sm font-semibold text-indigo-600 uppercase text-right"><%= round(e(milestone, :progressPercentage, 0.0)) %>% Completed - <%= round(milestone_in_progress(milestone)*100)%>% In Progress</div>
-            <div class="h-3 mt-1 bg-gray-200">
+            <div class="h-3 mt-1 bg-neutral">
               <span style={"width: "<> e(milestone, "progressPercentage", "0")} class="block h-3 bg-indigo-600"></span>
             </div>
           </div>
 
           <%= if e(milestone, :dueOn, nil) do %>
             <div class="flex items-center mt-2">
-              <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
-              <span class="ml-2 text-base font-semibold text-gray-500"><%= e(milestone, "dueOn", "No due date") %></span>
+              <svg class="w-5 h-5 text-primary-content-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+              <span class="ml-2 text-base font-semibold text-primary-content-500"><%= e(milestone, "dueOn", "No due date") %></span>
             </div>
           <% end %>
 
@@ -39,8 +39,8 @@
             <button
               x-description="Expand/collapse milestone"
               @click={"openPanel = (openPanel === '"<> e(milestone, :id, 1) <>"' ? null : '"<> e(milestone, :id, 1) <>"')"}
-              class="flex items-start justify-between w-full pt-3 mt-4 text-left text-gray-700 border-t border-gray-800">
-              <span class="text-sm font-medium tracking-wider text-gray-700 uppercase">Tasks</span>
+              class="flex items-start justify-between w-full pt-3 mt-4 text-left text-primary-content-700 border-t border-gray-800">
+              <span class="text-sm font-medium tracking-wider text-primary-content-700 uppercase">Tasks</span>
               <span class="flex items-center ml-6">
                 <svg
                   x-description="Heroicon name: outline/chevron-down"
@@ -82,7 +82,7 @@
                     <% end %>
                   <% end %>
 
-                  <span class="flex-1 text-base text-gray-800 truncate hover:underline">
+                  <span class="flex-1 text-base text-primary-content-800 truncate hover:underline">
                     <a target="blank" href={ e(issue, :url, "#")}> <%= e(issue, :title, "Unknown task") %></a>
                   </span>
                 </div>
@@ -95,11 +95,11 @@
       </div>
 
       <%= link to: "https://github.com/bonfire-networks/bonfire-app/issues/new?assignees=&labels=New+Issue&template=feature_request.md&title=Feature+Proposal%3A+" do %>
-        <div class="items-center block w-full px-6 py-3 mt-12 text-base font-medium text-center text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Make a suggestion</div>
+        <div class="items-center block w-full px-6 py-3 mt-12 text-base font-medium text-center text-primary-content-700 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">Make a suggestion</div>
       <% end %>
 
       <%= link to: "https://github.com/bonfire-networks/bonfire-app/issues/new?assignees=&labels=New+Issue&template=bug_report.md&title=Bug+Report%3A+" do %>
-        <div class="items-center block w-full px-6 py-3 mt-12 text-base font-medium text-center text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Provide feedback</div>
+        <div class="items-center block w-full px-6 py-3 mt-12 text-base font-medium text-center text-primary-content-700 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">Provide feedback</div>
       <% end %>
     </div>
   </div>

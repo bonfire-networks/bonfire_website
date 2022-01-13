@@ -31,7 +31,7 @@
       }
     </style>
   </head>
-  <body id="layout-root website" class="bg-white dark:bg-gray-800">
+  <body id="layout-root website" class="bg-base-100 dark:bg-neutral-800">
     <%= if Code.ensure_loaded?(Thesis.View), do: Thesis.View.thesis_editor(@conn) %>
     <%= @inner_content %>
   </body>

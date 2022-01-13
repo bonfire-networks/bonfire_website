@@ -20,12 +20,12 @@
         </p>
       </div>
       <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
-        <a href="#" class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-white hover:bg-indigo-50">
+        <a href="#" class="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-indigo-600 bg-base-100 hover:bg-base-200">
           Learn more
         </a>
       </div>
       <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
-        <button type="button" class="-mr-1 flex p-2 rounded-md hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
+        <button type="button" class="-mr-1 flex p-2 rounded-md hover:bg-base-2000 focus:outline-none focus:ring-2 focus:ring-white sm:-mr-2">
           <span class="sr-only">Dismiss</span>
           <!-- Heroicon name: outline/x -->
           <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -37,37 +37,37 @@
   </div>
 </div>
 
-<div class="rubik mt-12 container relative max-w-screen-lg mx-auto bg-white dark:bg-gray-800 px-6 lg:px-0">
+<div class="rubik mt-12 container relative max-w-screen-lg mx-auto bg-base-100 dark:bg-neutral-800 px-6 lg:px-0">
   <div class="flex items-center justify-between md:justify-start md:space-x-10 lg:px-0">
       <div class="flex justify-start lg:w-0 lg:flex-1">
-        <a class="text-2xl lg:text-2xl text-gray-800 dark:text-gray-100 font-bold" href="/">🔥 bonfire</a>
+        <a class="text-2xl lg:text-2xl text-primary-content-800  font-bold" href="/">🔥 bonfire</a>
       </div>
 
       <div class="items-center justify-end md:flex md:flex-1 lg:w-0">
         <nav class="flex items-center space-x-4 lg:space-x-12">
 
           <%= live_redirect to: path(Bonfire.Website.Page.MilestonesLive ) do %>
-            <div class="text-sm text-gray-600 dark:text-gray-100 hover:text-gray-800 dark-hover:text-gray-100 dark:hover:bg-gray-700 px-3 py-2 font-medium text-sm rounded-md hover:bg-gray-200">
+            <div class="text-sm text-primary-content-600  hover:text-primary-content-800 dark-hover:text-primary-content-100  px-3 py-2 font-medium text-sm rounded-md hover:bg-neutral">
               Roadmap
             </div>
           <% end %>
           <%= live_redirect to: path(Bonfire.Website.Page.FaqLive ) do %>
-            <div class="text-sm text-gray-600 dark:text-gray-100 hover:text-gray-800 dark-hover:text-gray-100 dark:hover:bg-gray-700 px-3 py-2 font-medium text-sm rounded-md hover:bg-gray-200">
+            <div class="text-sm text-primary-content-600  hover:text-primary-content-800 dark-hover:text-primary-content-100  px-3 py-2 font-medium text-sm rounded-md hover:bg-neutral">
               FAQ
             </div>
           <% end %>
           <%# <%= live_redirect to: path(Bonfire.Website.HomeGuestLive ) do %>
-            <%# <div class="text-sm text-gray-600 hover:text-gray-800 px-3 py-2 font-medium text-sm rounded-md hover:bg-gray-200">
+            <%# <div class="text-sm text-primary-content-600 hover:text-primary-content-800 px-3 py-2 font-medium text-sm rounded-md hover:bg-neutral">
               Blog
             </div> %>
           <%# end %>
-          <div class="text-sm text-gray-700 flex items-center space-x-6">
-            <a href="https://github.com/bonfire-networks" target="blank" class="text-gray-400 hover:text-gray-500">
+          <div class="text-sm text-primary-content-700 flex items-center space-x-6">
+            <a href="https://github.com/bonfire-networks" target="blank" class="text-primary-content-400 hover:text-primary-content-500">
               <span class="sr-only">GitHub</span>
               <%= live_component(@socket, Bonfire.Website.Icons.GitLive, class: "w-6 h-6") %>
             </a>
 
-            <a href="https://indieweb.social/@bonfire" target="blank" class="text-gray-400 hover:text-gray-500">
+            <a href="https://indieweb.social/@bonfire" target="blank" class="text-primary-content-400 hover:text-primary-content-500">
               <span class="sr-only">Fediverse</span>
               <%= live_component(@socket, Bonfire.Website.Icons.FediverseLive, class: "w-6 h-6") %>
             </a>
@@ -77,7 +77,7 @@
             x-show="theme === 'dark'"
             type="button"
             @click="theme = 'light'"
-            class="group rounded-md border border-transparent focus:bg-gray-100 focus:outline-none dark:focus:bg-black dark:focus:border-gray-800 text-gray-400">
+            class="group rounded-md border border-transparent focus:bg-neutral focus:outline-none dark:focus:bg-black dark:focus:border-gray-800 text-primary-content-400">
             <span class="sr-only">
               <span class="dark:hidden">Switch to <span x-text="theme"></span> theme</span>
             </span>
@@ -88,7 +88,7 @@
           <button
             @click="{theme === 'dark' ? theme = 'light' : theme = 'dark'}"
             type="button"
-            class="group rounded-md border border-transparent focus:bg-gray-100 focus:outline-none dark:focus:bg-gray-700 dark:focus:border-gray-700 text-gray-400">
+            class="group rounded-md border border-transparent focus:bg-neutral focus:outline-none dark:focus:bg-neutral dark:focus:border-gray-700 text-primary-content-400">
             <span class="sr-only">
               <span class="dark:hidden">Switch to <span x-text="theme"></span> theme</span>
             </span>
