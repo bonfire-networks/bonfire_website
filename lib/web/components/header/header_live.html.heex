@@ -47,17 +47,17 @@
         <nav class="flex items-center space-x-4 lg:space-x-12">
 
           <%= live_redirect to: path(Bonfire.Website.Page.MilestonesLive ) do %>
-            <div class="text-sm text-primary-content-600  hover:text-primary-content-800 dark-hover:text-primary-content-100  px-3 py-2 font-medium text-sm rounded-md hover:bg-neutral">
+            <div class="text-sm text-primary-content-600  hover:text-primary-content-800 dark-hover:text-primary-content-100  px-3 py-2 font-medium text-sm rounded-md hover:bg-neutral hover:bg-opacity-30 ">
               Roadmap
             </div>
           <% end %>
           <%= live_redirect to: path(Bonfire.Website.Page.FaqLive ) do %>
-            <div class="text-sm text-primary-content-600  hover:text-primary-content-800 dark-hover:text-primary-content-100  px-3 py-2 font-medium text-sm rounded-md hover:bg-neutral">
+            <div class="text-sm text-primary-content-600  hover:text-primary-content-800 dark-hover:text-primary-content-100  px-3 py-2 font-medium text-sm rounded-md hover:bg-neutral hover:bg-opacity-30 ">
               FAQ
             </div>
           <% end %>
           <%# <%= live_redirect to: path(Bonfire.Website.HomeGuestLive ) do %>
-            <%# <div class="text-sm text-primary-content-600 hover:text-primary-content-800 px-3 py-2 font-medium text-sm rounded-md hover:bg-neutral">
+            <%# <div class="text-sm text-primary-content-600 hover:text-primary-content-800 px-3 py-2 font-medium text-sm rounded-md hover:bg-neutral hover:bg-opacity-30 ">
               Blog
             </div> %>
           <%# end %>
@@ -77,7 +77,7 @@
             x-show="theme === 'dark'"
             type="button"
             @click="theme = 'light'"
-            class="group rounded-md border border-transparent focus:bg-neutral focus:outline-none dark:focus:bg-black dark:focus:border-gray-800 text-primary-content-400">
+            class="group rounded-md border border-transparent  focus:outline-none dark:focus:bg-black dark:focus:border-gray-800 text-primary-content-400">
             <span class="sr-only">
               <span class="dark:hidden">Switch to <span x-text="theme"></span> theme</span>
             </span>
@@ -88,7 +88,7 @@
           <button
             @click="{theme === 'dark' ? theme = 'light' : theme = 'dark'}"
             type="button"
-            class="group rounded-md border border-transparent focus:bg-neutral focus:outline-none dark:focus:bg-neutral dark:focus:border-gray-700 text-primary-content-400">
+            class="group rounded-md border border-transparent  focus:outline-none dark: dark:focus:border-gray-700 text-primary-content-400">
             <span class="sr-only">
               <span class="dark:hidden">Switch to <span x-text="theme"></span> theme</span>
             </span>

@@ -19,7 +19,7 @@
 
           <div class="">
             <div class="text-sm font-semibold text-indigo-600 uppercase text-right"><%= round(e(milestone, :progressPercentage, 0.0)) %>% Completed - <%= round(milestone_in_progress(milestone)*100)%>% In Progress</div>
-            <div class="h-3 mt-1 bg-neutral">
+            <div class="h-3 mt-1 bg-neutral bg-opacity-30">
               <span style={"width: "<> e(milestone, "progressPercentage", "0")} class="block h-3 bg-indigo-600"></span>
             </div>
           </div>
@@ -95,11 +95,11 @@
       </div>
 
       <%= link to: "https://github.com/bonfire-networks/bonfire-app/issues/new?assignees=&labels=New+Issue&template=feature_request.md&title=Feature+Proposal%3A+" do %>
-        <div class="items-center block w-full px-6 py-3 mt-12 text-base font-medium text-center text-primary-content-700 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">Make a suggestion</div>
+        <div class="items-center block w-full px-6 py-3 mt-12 text-base font-medium text-center text-primary-content-700 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">Make a suggestion</div>
       <% end %>
 
       <%= link to: "https://github.com/bonfire-networks/bonfire-app/issues/new?assignees=&labels=New+Issue&template=bug_report.md&title=Bug+Report%3A+" do %>
-        <div class="items-center block w-full px-6 py-3 mt-12 text-base font-medium text-center text-primary-content-700 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">Provide feedback</div>
+        <div class="items-center block w-full px-6 py-3 mt-12 text-base font-medium text-center text-primary-content-700 bg-base-100 border border-gray-300 rounded-md shadow-sm hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">Provide feedback</div>
       <% end %>
     </div>
   </div>
