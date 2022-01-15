@@ -1,3 +1,3 @@
 defmodule Bonfire.Website.LayoutView do
-  use Bonfire.Web, :view
+  use Bonfire.Web, {:layout_view, [namespace: Bonfire.Website]}
 end
