@@ -3,7 +3,7 @@ defmodule Bonfire.Website.Page.MilestonesLive do
   alias Bonfire.Me.Fake
   alias Bonfire.Web.LivePlugs
   alias Bonfire.Me.Users
-  alias Bonfire.Me.Web.{CreateUserLive, LoggedDashboardLive}
+  alias Bonfire.Me.Web.CreateUserLive
   alias Bonfire.Website.{MilestonesLive, HeaderLive, AppsPreviewLive,  FooterLive, FaqLive, HeroLive, PreviewLive, DevicePreviewLive, BlogPreviewLive}
 
 
