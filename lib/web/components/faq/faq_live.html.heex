@@ -4,7 +4,7 @@
     x-data="{ openPanel: 0 }"
     class="rubik max-w-screen-lg container mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200 dark:divide-gray-600">
-      <h2 class="text-center text-3xl font-extrabold text-primary-content-900  sm:text-4xl">
+      <h2 class="text-center text-3xl font-extrabold text-base-content-900  sm:text-4xl">
         Frequently asked questions
       </h2>
       <dl class="mt-6 space-y-6 divide-y divide-gray-200 dark:divide-gray-600">
@@ -14,8 +14,8 @@
             <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 0 ? null : 0)"
-              class="text-left w-full flex justify-between items-start text-primary-content-400">
-              <span class="font-medium text-primary-content-900 ">
+              class="text-left w-full flex justify-between items-start text-base-content-400">
+              <span class="font-medium text-base-content-900 ">
                 Is bonfire open source?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -50,8 +50,8 @@
             <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 1 ? null : 1)"
-              class="text-left w-full flex justify-between items-start text-primary-content-400">
-              <span class="font-medium text-primary-content-900 ">
+              class="text-left w-full flex justify-between items-start text-base-content-400">
+              <span class="font-medium text-base-content-900 ">
                 Is it free to use?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -90,8 +90,8 @@
             <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 2 ? null : 2)"
-              class="text-left w-full flex justify-between items-start text-primary-content-400">
-              <span class="font-medium text-primary-content-900 ">
+              class="text-left w-full flex justify-between items-start text-base-content-400">
+              <span class="font-medium text-base-content-900 ">
                 Will there be any ads, tracking, or sponsored content?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -126,8 +126,8 @@
             <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 3 ? null : 3)"
-              class="text-left w-full flex justify-between items-start text-primary-content-400">
-              <span class="font-medium text-primary-content-900 ">
+              class="text-left w-full flex justify-between items-start text-base-content-400">
+              <span class="font-medium text-base-content-900 ">
                 Who can see my data?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -162,8 +162,8 @@
             <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 5 ? null : 5)"
-              class="text-left w-full flex justify-between items-start text-primary-content-400">
-              <span class="font-medium text-primary-content-900 ">
+              class="text-left w-full flex justify-between items-start text-base-content-400">
+              <span class="font-medium text-base-content-900 ">
                 Modular ecosystem? What do you mean?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -200,8 +200,8 @@
             <button
               x-description="Expand/collapse question button"
               @click="openPanel = (openPanel === 4 ? null : 4)"
-              class="text-left w-full flex justify-between items-start text-primary-content-400">
-              <span class="font-medium text-primary-content-900 ">
+              class="text-left w-full flex justify-between items-start text-base-content-400">
+              <span class="font-medium text-base-content-900 ">
                 Who is building Bonfire?
               </span>
               <span class="ml-6 h-7 flex items-center">
@@ -234,7 +234,7 @@
         </div>
       </dl>
       <%= live_redirect to: path(Bonfire.Website.Page.FaqLive ) do %>
-        <div class="mt-12 block text-center items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-primary-content-700 bg-base-100 hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">Read all the FAQs</div>
+        <div class="mt-12 block text-center items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-base-content-700 bg-base-100 hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">Read all the FAQs</div>
       <% end %>
     </div>
   </div>
