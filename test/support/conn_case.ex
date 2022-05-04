@@ -22,6 +22,9 @@ defmodule Bonfire.Website.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
+
+      import Bonfire.UI.Common.Testing.Helpers
+
       import Phoenix.LiveViewTest
       import Bonfire.Website.ConnCase
       import Bonfire.Website.Test.ConnHelpers
