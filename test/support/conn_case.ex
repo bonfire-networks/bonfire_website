@@ -26,7 +26,7 @@ defmodule Bonfire.Website.ConnCase do
       import Bonfire.UI.Common.Testing.Helpers
 
       import Phoenix.LiveViewTest
-      import Bonfire.Website.ConnCase
+      # import Bonfire.Website.ConnCase
       import Bonfire.Website.Test.ConnHelpers
       import Bonfire.Website.Test.FakeHelpers
       alias Bonfire.Me.Fake

@@ -23,7 +23,7 @@ defmodule Bonfire.Website.DataCase do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Bonfire.Website.DataCase
+      # import Bonfire.Website.DataCase
     end
   end
 
