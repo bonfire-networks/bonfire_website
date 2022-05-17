@@ -1,9 +1,9 @@
 defmodule Bonfire.Website.Page.FaqLive do
   use Bonfire.UI.Common.Web, {:live_view, [layout: {Bonfire.Website.LayoutView, "live.html"}]}
   alias Bonfire.Me.Fake
-  alias Bonfire.Me.Web.LivePlugs
+  alias Bonfire.UI.Me.LivePlugs
   alias Bonfire.Me.Users
-  alias Bonfire.Me.Web.CreateUserLive
+  alias Bonfire.UI.Me.CreateUserLive
   alias Bonfire.Website.{HeaderLive, AppsPreviewLive,  FooterLive, FaqLive, HeroLive, PreviewLive, DevicePreviewLive, BlogPreviewLive}
 
 
