@@ -39,7 +39,7 @@ defmodule Bonfire.Website.ConnCase do
 
   setup tags do
 
-    import Bonfire.Website.Integration
+    # import Bonfire.Website.Integration
 
     Bonfire.Common.Test.Interactive.setup_test_repo(tags)
 
