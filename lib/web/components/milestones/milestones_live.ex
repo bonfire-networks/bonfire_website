@@ -4,7 +4,7 @@ defmodule Bonfire.Website.MilestonesLive do
 
   def update(assigns, socket) do
 
-   milestones = with token <- Bonfire.Common.Config.get!(:github_token),
+   milestones = with token <- Config.get!(:github_token),
    {:ok, %{body: body}} <- Neuron.query("""
     query {
       repository(name:"bonfire-app", owner:"bonfire-networks") {
