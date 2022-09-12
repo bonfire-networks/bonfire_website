@@ -1,240 +1,292 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
+<div
+  x-data="{ openPanel: 0 }"
+  class="rubik max-w-screen-lg container mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8"
+>
+  <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200 dark:divide-gray-600">
+    <h2 class="text-center text-3xl font-extrabold text-base-content opacity-90  sm:text-4xl">
+      Frequently asked questions
+    </h2>
+    <dl class="mt-6 space-y-6 divide-y divide-gray-200 dark:divide-gray-600">
+      <div class="pt-6">
+        <dt class="text-lg">
+          <!-- Expand/collapse question button -->
+          <button
+            x-description="Expand/collapse question button"
+            @click="openPanel = (openPanel === 0 ? null : 0)"
+            class="text-left w-full flex justify-between items-start text-base-content opacity-60"
+          >
+            <span class="font-medium text-base-content opacity-90 ">
+              Is bonfire open source?
+            </span>
+            <span class="ml-6 h-7 flex items-center">
+              <svg
+                x-description="Heroicon name: outline/chevron-down"
+                x-state:on="Open"
+                x-state:off="Closed"
+                x-bind:class="{ '-rotate-180': openPanel === 0, 'rotate-0': !(openPanel === 0) }"
+                class="-rotate-180 h-6 w-6 transform"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </span>
+          </button>
+        </dt>
+        <dd x-show="openPanel === 0" class="mt-2 pr-12">
+          <div class="prose dark:prose-light">
+            Yes, it is free/libre open source software, licensed primarly under the <a
+              href="http://www.gnu.org/licenses/agpl-3.0.html"
+              target="blank"
+            >AGPL</a>, meaning the source code is available and can be modified, and that all such changes, improvements, or additions should be contributed back to the community. Some Bonfire extensions or dependencies have other <a
+              href="https://github.com/bonfire-networks/bonfire-app/blob/main/DEPENDENCIES.m"
+              target="blank"
+            >open source licenses</a>.
+          </div>
+        </dd>
+      </div>
 
-  <div
-    x-data="{ openPanel: 0 }"
-    class="rubik max-w-screen-lg container mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
-    <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200 dark:divide-gray-600">
-      <h2 class="text-center text-3xl font-extrabold text-base-content opacity-90  sm:text-4xl">
-        Frequently asked questions
-      </h2>
-      <dl class="mt-6 space-y-6 divide-y divide-gray-200 dark:divide-gray-600">
-        <div class="pt-6">
-          <dt class="text-lg">
-            <!-- Expand/collapse question button -->
-            <button
-              x-description="Expand/collapse question button"
-              @click="openPanel = (openPanel === 0 ? null : 0)"
-              class="text-left w-full flex justify-between items-start text-base-content opacity-60">
-              <span class="font-medium text-base-content opacity-90 ">
-                Is bonfire open source?
-              </span>
-              <span class="ml-6 h-7 flex items-center">
-                <svg
-                  x-description="Heroicon name: outline/chevron-down"
-                  x-state:on="Open"
-                  x-state:off="Closed"
-                  x-bind:class="{ '-rotate-180': openPanel === 0, 'rotate-0': !(openPanel === 0) }"
-                  class="-rotate-180 h-6 w-6 transform"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd
-            x-show="openPanel === 0"
-            class="mt-2 pr-12">
-            <div class="prose dark:prose-light">
-              Yes, it is free/libre open source software, licensed primarly under the <a href="http://www.gnu.org/licenses/agpl-3.0.html" target="blank">AGPL</a>, meaning the source code is available and can be modified, and that all such changes, improvements, or additions should be contributed back to the community. Some Bonfire extensions or dependencies have other <a href="https://github.com/bonfire-networks/bonfire-app/blob/main/DEPENDENCIES.m" target="blank">open source licenses</a>.
-            </div>
-          </dd>
-        </div>
+      <div class="pt-6">
+        <dt class="text-lg">
+          <!-- Expand/collapse question button -->
+          <button
+            x-description="Expand/collapse question button"
+            @click="openPanel = (openPanel === 1 ? null : 1)"
+            class="text-left w-full flex justify-between items-start text-base-content opacity-60"
+          >
+            <span class="font-medium text-base-content opacity-90 ">
+              Is it free to use?
+            </span>
+            <span class="ml-6 h-7 flex items-center">
+              <svg
+                x-description="Heroicon name: outline/chevron-down"
+                x-state:on="Open"
+                x-state:off="Closed"
+                x-bind:class="{ '-rotate-180': openPanel === 1, 'rotate-0': !(openPanel === 1) }"
+                class="-rotate-180 h-6 w-6 transform"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </span>
+          </button>
+        </dt>
+        <dd x-show="openPanel === 1" class="mt-2 pr-12">
+          <div class="prose dark:prose-light">
+            <ul>
+              <li>
+                Yes, there will always be options for using Bonfire at no cost (such as joining a friend's instance, or setting one up on a device or server that you already have).
+              </li>
+              <li>
+                Optionally, some users may want to pay for the convenience of someone taking care of the infrastructure and technical labour. The Bonfire team (and probably others) will provide services for them.
+              </li>
+              <li>
+                Please note, building software takes time, and while Bonfire is a work of love, the team appreciates your support in the form of contributions, financial or otherwise (such as feedback or improvements to the software).
+              </li>
+            </ul>
+          </div>
+        </dd>
+      </div>
 
-        <div class="pt-6">
-          <dt class="text-lg">
-            <!-- Expand/collapse question button -->
-            <button
-              x-description="Expand/collapse question button"
-              @click="openPanel = (openPanel === 1 ? null : 1)"
-              class="text-left w-full flex justify-between items-start text-base-content opacity-60">
-              <span class="font-medium text-base-content opacity-90 ">
-                Is it free to use?
-              </span>
-              <span class="ml-6 h-7 flex items-center">
-                <svg
-                  x-description="Heroicon name: outline/chevron-down"
-                  x-state:on="Open"
-                  x-state:off="Closed"
-                  x-bind:class="{ '-rotate-180': openPanel === 1, 'rotate-0': !(openPanel === 1) }"
-                  class="-rotate-180 h-6 w-6 transform"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd
-            x-show="openPanel === 1"
-            class="mt-2 pr-12">
-            <div class="prose dark:prose-light">
-              <ul>
-                <li>Yes, there will always be options for using Bonfire at no cost (such as joining a friend's instance, or setting one up on a device or server that you already have). </li>
-                <li>Optionally, some users may want to pay for the convenience of someone taking care of the infrastructure and technical labour. The Bonfire team (and probably others) will provide services for them. </li>
-                <li>Please note, building software takes time, and while Bonfire is a work of love, the team appreciates your support in the form of contributions, financial or otherwise (such as feedback or improvements to the software).</li>
-              </ul>
-            </div>
-          </dd>
-        </div>
+      <div class="pt-6">
+        <dt class="text-lg">
+          <!-- Expand/collapse question button -->
+          <button
+            x-description="Expand/collapse question button"
+            @click="openPanel = (openPanel === 2 ? null : 2)"
+            class="text-left w-full flex justify-between items-start text-base-content opacity-60"
+          >
+            <span class="font-medium text-base-content opacity-90 ">
+              Will there be any ads, tracking, or sponsored content?
+            </span>
+            <span class="ml-6 h-7 flex items-center">
+              <svg
+                x-description="Heroicon name: outline/chevron-down"
+                x-state:on="Open"
+                x-state:off="Closed"
+                x-bind:class="{ '-rotate-180': openPanel === 2, 'rotate-0': !(openPanel === 2) }"
+                class="-rotate-180 h-6 w-6 transform"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </span>
+          </button>
+        </dt>
+        <dd x-show="openPanel === 2" class="mt-2 pr-12">
+          <div class="prose dark:prose-light">
+            No, the software or services provided by the Bonfire team will never include any type of advertisement or spy on users. If third party developers try to include any ads, Bonfire users will always have the freedom to use an alternative extension or fork it. Similarly, if a user or instance were used to post sponsored content, you could simply block them (we may also implement shared blocklists in future to help with this).
+          </div>
+        </dd>
+      </div>
 
-        <div class="pt-6">
-          <dt class="text-lg">
-            <!-- Expand/collapse question button -->
-            <button
-              x-description="Expand/collapse question button"
-              @click="openPanel = (openPanel === 2 ? null : 2)"
-              class="text-left w-full flex justify-between items-start text-base-content opacity-60">
-              <span class="font-medium text-base-content opacity-90 ">
-                Will there be any ads, tracking, or sponsored content?
-              </span>
-              <span class="ml-6 h-7 flex items-center">
-                <svg
-                  x-description="Heroicon name: outline/chevron-down"
-                  x-state:on="Open"
-                  x-state:off="Closed"
-                  x-bind:class="{ '-rotate-180': openPanel === 2, 'rotate-0': !(openPanel === 2) }"
-                  class="-rotate-180 h-6 w-6 transform"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd
-            x-show="openPanel === 2"
-            class="mt-2 pr-12">
-            <div class="prose dark:prose-light">
-              No, the software or services provided by the Bonfire team will never include any type of advertisement or spy on users. If third party developers try to include any ads, Bonfire users will always have the freedom to use an alternative extension or fork it. Similarly, if a user or instance were used to post sponsored content, you could simply block them (we may also implement shared blocklists in future to help with this).
-            </div>
-          </dd>
-        </div>
+      <div class="pt-6">
+        <dt class="text-lg">
+          <!-- Expand/collapse question button -->
+          <button
+            x-description="Expand/collapse question button"
+            @click="openPanel = (openPanel === 3 ? null : 3)"
+            class="text-left w-full flex justify-between items-start text-base-content opacity-60"
+          >
+            <span class="font-medium text-base-content opacity-90 ">
+              Who can see my data?
+            </span>
+            <span class="ml-6 h-7 flex items-center">
+              <svg
+                x-description="Heroicon name: outline/chevron-down"
+                x-state:on="Open"
+                x-state:off="Closed"
+                x-bind:class="{ '-rotate-180': openPanel === 3, 'rotate-0': !(openPanel === 3) }"
+                class="-rotate-180 h-6 w-6 transform"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </span>
+          </button>
+        </dt>
+        <dd x-show="openPanel === 3" class="mt-2 pr-12">
+          <div class="prose dark:prose-light">
+            Our main goal if for you to be in control so that you can know and decide who can see something before you post. Now let’s get into the nitty gritty…
+          </div>
+        </dd>
+      </div>
 
-        <div class="pt-6">
-          <dt class="text-lg">
-            <!-- Expand/collapse question button -->
-            <button
-              x-description="Expand/collapse question button"
-              @click="openPanel = (openPanel === 3 ? null : 3)"
-              class="text-left w-full flex justify-between items-start text-base-content opacity-60">
-              <span class="font-medium text-base-content opacity-90 ">
-                Who can see my data?
-              </span>
-              <span class="ml-6 h-7 flex items-center">
-                <svg
-                  x-description="Heroicon name: outline/chevron-down"
-                  x-state:on="Open"
-                  x-state:off="Closed"
-                  x-bind:class="{ '-rotate-180': openPanel === 3, 'rotate-0': !(openPanel === 3) }"
-                  class="-rotate-180 h-6 w-6 transform"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd
-            x-show="openPanel === 3"
-            class="mt-2 pr-12">
-            <div class="prose dark:prose-light">
-              Our main goal if for you to be in control so that you can know and decide who can see something before you post. Now let’s get into the nitty gritty…
-            </div>
-          </dd>
-        </div>
-
-        <div class="pt-6">
-          <dt class="text-lg">
-            <!-- Expand/collapse question button -->
-            <button
-              x-description="Expand/collapse question button"
-              @click="openPanel = (openPanel === 5 ? null : 5)"
-              class="text-left w-full flex justify-between items-start text-base-content opacity-60">
-              <span class="font-medium text-base-content opacity-90 ">
-                Modular ecosystem? What do you mean?
-              </span>
-              <span class="ml-6 h-7 flex items-center">
-                <svg
-                  x-description="Heroicon name: outline/chevron-down"
-                  x-state:on="Open"
-                  x-state:off="Closed"
-                  x-bind:class="{ '-rotate-180': openPanel === 5, 'rotate-0': !(openPanel === 5) }"
-                  class="-rotate-180 h-6 w-6 transform"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd
-            x-show="openPanel === 5"
-            class="mt-2 pr-12">
-            <div class="prose dark:prose-light">
-                <ul>
-                  <li>Bonfire combines the power of federation and open data formats to create interoperable toolkits that people can use to easily build their own apps to meet their specific needs. Users are then free to interact with multiple people and groups using these apps hosted on their own device, regardless of what federated software these other people use.</li>
-                  <li>Every line of Bonfire’s code is available to be used or forked, in a collection of libraries that can be assembled and re-assembled to create all kinds of full-featured apps.</li>
-                </ul>
-            </div>
-          </dd>
-        </div>
-        <div class="pt-6">
-          <dt class="text-lg">
-            <!-- Expand/collapse question button -->
-            <button
-              x-description="Expand/collapse question button"
-              @click="openPanel = (openPanel === 4 ? null : 4)"
-              class="text-left w-full flex justify-between items-start text-base-content opacity-60">
-              <span class="font-medium text-base-content opacity-90 ">
-                Who is building Bonfire?
-              </span>
-              <span class="ml-6 h-7 flex items-center">
-                <svg
-                  x-description="Heroicon name: outline/chevron-down"
-                  x-state:on="Open"
-                  x-state:off="Closed"
-                  x-bind:class="{ '-rotate-180': openPanel === 4, 'rotate-0': !(openPanel === 4) }"
-                  class="-rotate-180 h-6 w-6 transform"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </span>
-            </button>
-          </dt>
-          <dd
-            x-show="openPanel === 4"
-            class="mt-2 pr-12">
-             <div class="prose dark:prose-light">
-                <ul>
-                  <li>The core team is made up of a collective of designers and developers which has been cooperating in various forms (and other names, the project was previously known as CommonsPub, itself a fork of what was then MoodleNet) since 2019, and started to rewrite and build Bonfire as a modular ecosystem at the end of 2020.</li>
-                  <li>You? Bonfire is an ecosystem aimed to empower individuals and communities to shape and control their digital lives. Everyone is invited to participate in some way, whether that means contributing to the available extensions or making their own, that doesn’t mean only coders, but really anyone who wants to get involved: users, instance admins, translators, designers, UX or accessibility testers, writers, activists, or anybody else who feels like they can offer something to move the project forward, or in another direction!</li>
-                </ul>
-            </div>
-          </dd>
-        </div>
-      </dl>
-      <%= live_redirect to: path(Bonfire.Website.Page.FaqLive ) do %>
-        <div class="mt-12 block text-center items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-base-content opacity-70 bg-base-100 hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">Read all the FAQs</div>
-      <% end %>
-    </div>
+      <div class="pt-6">
+        <dt class="text-lg">
+          <!-- Expand/collapse question button -->
+          <button
+            x-description="Expand/collapse question button"
+            @click="openPanel = (openPanel === 5 ? null : 5)"
+            class="text-left w-full flex justify-between items-start text-base-content opacity-60"
+          >
+            <span class="font-medium text-base-content opacity-90 ">
+              Modular ecosystem? What do you mean?
+            </span>
+            <span class="ml-6 h-7 flex items-center">
+              <svg
+                x-description="Heroicon name: outline/chevron-down"
+                x-state:on="Open"
+                x-state:off="Closed"
+                x-bind:class="{ '-rotate-180': openPanel === 5, 'rotate-0': !(openPanel === 5) }"
+                class="-rotate-180 h-6 w-6 transform"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </span>
+          </button>
+        </dt>
+        <dd x-show="openPanel === 5" class="mt-2 pr-12">
+          <div class="prose dark:prose-light">
+            <ul>
+              <li>
+                Bonfire combines the power of federation and open data formats to create interoperable toolkits that people can use to easily build their own apps to meet their specific needs. Users are then free to interact with multiple people and groups using these apps hosted on their own device, regardless of what federated software these other people use.
+              </li>
+              <li>
+                Every line of Bonfire’s code is available to be used or forked, in a collection of libraries that can be assembled and re-assembled to create all kinds of full-featured apps.
+              </li>
+            </ul>
+          </div>
+        </dd>
+      </div>
+      <div class="pt-6">
+        <dt class="text-lg">
+          <!-- Expand/collapse question button -->
+          <button
+            x-description="Expand/collapse question button"
+            @click="openPanel = (openPanel === 4 ? null : 4)"
+            class="text-left w-full flex justify-between items-start text-base-content opacity-60"
+          >
+            <span class="font-medium text-base-content opacity-90 ">
+              Who is building Bonfire?
+            </span>
+            <span class="ml-6 h-7 flex items-center">
+              <svg
+                x-description="Heroicon name: outline/chevron-down"
+                x-state:on="Open"
+                x-state:off="Closed"
+                x-bind:class="{ '-rotate-180': openPanel === 4, 'rotate-0': !(openPanel === 4) }"
+                class="-rotate-180 h-6 w-6 transform"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </span>
+          </button>
+        </dt>
+        <dd x-show="openPanel === 4" class="mt-2 pr-12">
+          <div class="prose dark:prose-light">
+            <ul>
+              <li>
+                The core team is made up of a collective of designers and developers which has been cooperating in various forms (and other names, the project was previously known as CommonsPub, itself a fork of what was then MoodleNet) since 2019, and started to rewrite and build Bonfire as a modular ecosystem at the end of 2020.
+              </li>
+              <li>
+                You? Bonfire is an ecosystem aimed to empower individuals and communities to shape and control their digital lives. Everyone is invited to participate in some way, whether that means contributing to the available extensions or making their own, that doesn’t mean only coders, but really anyone who wants to get involved: users, instance admins, translators, designers, UX or accessibility testers, writers, activists, or anybody else who feels like they can offer something to move the project forward, or in another direction!
+              </li>
+            </ul>
+          </div>
+        </dd>
+      </div>
+    </dl>
+    <%= live_redirect to: path(Bonfire.Website.Page.FaqLive ) do %>
+      <div class="mt-12 block text-center items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-md text-base-content opacity-70 bg-base-100 hover:bg-neutral hover:bg-opacity-30  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500">
+        Read all the FAQs
+      </div>
+    <% end %>
   </div>
+</div>
