@@ -1,6 +1,6 @@
 defmodule Bonfire.Website.Page.FaqLive do
   use Bonfire.UI.Common.Web,
-      {:live_view, [layout: {Bonfire.Website.LayoutView, "live.html"}]}
+      {:live_view, [layout: {Bonfire.Website.LayoutView, :live}]}
 
   alias Bonfire.Me.Fake
   alias Bonfire.UI.Me.LivePlugs
