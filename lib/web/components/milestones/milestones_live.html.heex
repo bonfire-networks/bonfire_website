@@ -60,7 +60,7 @@
             <!-- Expand/collapse milestone button -->
             <button
               x-description="Expand/collapse milestone"
-              @click={
+              x-on:click={
                 "openPanel = (openPanel === '" <>
                   e(milestone, :id, 1) <> "' ? null : '" <> e(milestone, :id, 1) <> "')"
               }
