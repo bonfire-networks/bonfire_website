@@ -1,4 +1,5 @@
-defmodule Bonfire.Website.Repo.Migrations.ImportMe do
+defmodule Bonfire.Website.Repo.Migrations.ImportMe  do
+  @moduledoc false
   use Ecto.Migration
 
   import Bonfire.Website.Migration
