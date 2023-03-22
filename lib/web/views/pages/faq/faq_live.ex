@@ -3,7 +3,7 @@ defmodule Bonfire.Website.Page.FaqLive do
       {:live_view, [layout: {Bonfire.Website.LayoutView, :live}]}
 
   alias Bonfire.Me.Fake
-  alias Bonfire.UI.Me.LivePlugs
+
   alias Bonfire.Me.Users
   alias Bonfire.UI.Me.CreateUserLive
 
@@ -16,18 +16,9 @@ defmodule Bonfire.Website.Page.FaqLive do
   alias Bonfire.Website.DevicePreviewLive
   alias Bonfire.Website.BlogPreviewLive
 
-  def mount(params, session, socket) do
-    live_plug(params, session, socket, [
-      LivePlugs.LoadCurrentAccount,
-      LivePlugs.LoadCurrentUser,
-      Bonfire.UI.Common.LivePlugs.StaticChanged,
-      Bonfire.UI.Common.LivePlugs.Csrf,
-      Bonfire.UI.Common.LivePlugs.Locale,
-      &mounted/3
-    ])
-  end
+  on_mount {LivePlugs, [Bonfire.UI.Me.LivePlugs.LoadCurrentUser]}
 
-  defp mounted(params, session, socket) do
+  def mount(params, session, socket) do
     {:ok,
      assign(socket,
        page_title: "Bonfire FAQs"
