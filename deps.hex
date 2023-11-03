@@ -11,3 +11,4 @@ neuron = "~> 5.0" # graphql API client (for github)
 # bonfire_data_activity_pub = "~> 0.1"
 # bonfire_data_identity = "~> 0.1"
 # bonfire_data_social = "~> 0.1"
+surface = "~> 0.11.0"
