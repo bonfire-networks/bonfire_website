@@ -1,7 +1,7 @@
 defmodule Bonfire.Website.MilestonesLive do
   use Bonfire.UI.Common.Web, :live_component
 
-  def update(assigns, socket) do
+  def update(_assigns, socket) do
     Neuron.Config.set(connection_module: Bonfire.Common.HTTP)
 
     milestones =

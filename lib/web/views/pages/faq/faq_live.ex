@@ -18,7 +18,7 @@ defmodule Bonfire.Website.Page.FaqLive do
 
   on_mount {LivePlugs, [Bonfire.UI.Me.LivePlugs.LoadCurrentUser]}
 
-  def mount(params, session, socket) do
+  def mount(_params, _session, socket) do
     {:ok,
      assign(socket,
        page_title: "Bonfire FAQs"
