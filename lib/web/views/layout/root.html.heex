@@ -12,13 +12,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%= csrf_meta_tag() %>
+    {csrf_meta_tag()}
 
     <.live_title prefix="Bonfire – ">
-      <%= assigns[:page_title] || l("Welcome") %>
+      {assigns[:page_title] || l("Welcome")}
     </.live_title>
 
-    <%= raw(Config.get!(:endpoint_module).include_assets(@conn)) %>
+    {raw(Config.get!(:endpoint_module).include_assets(@conn))}
     <style>
       .lined:after {
         position: absolute;
@@ -36,7 +36,7 @@
     </style>
   </head>
   <body id="layout-root website" class="bg-base-100 dark:bg-neutral-800">
-    <%= if Code.ensure_loaded?(Thesis.View), do: Thesis.View.thesis_editor(@conn) %>
-    <%= @inner_content %>
+    {if Code.ensure_loaded?(Thesis.View), do: Thesis.View.thesis_editor(@conn)}
+    {@inner_content}
   </body>
 </html>

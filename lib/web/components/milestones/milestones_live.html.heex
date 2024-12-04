@@ -13,14 +13,14 @@
         <!-- Start milestone -->
         <div class="p-6 bg-base-100 border border-gray-800 shadow-solid">
           <h3 class="mt-3 text-2xl font-medium text-primary-content-900">
-            <%= e(milestone, :title, "Unknown milestone") %>
+            {e(milestone, :title, "Unknown milestone")}
           </h3>
 
           <div class="">
             <div class="text-sm font-semibold text-indigo-600 uppercase text-right">
-              <%= round(e(milestone, :progressPercentage, 0.0)) %>% Completed - <%= round(
+              {round(e(milestone, :progressPercentage, 0.0))}% Completed - {round(
                 milestone_in_progress(milestone) * 100
-              ) %>% In Progress
+              )}% In Progress
             </div>
             <div class="h-3 mt-1 bg-base-100 bg-opacity-30">
               <span
@@ -47,13 +47,13 @@
                 </path>
               </svg>
               <span class="ml-2 text-base font-semibold text-primary-content-500">
-                <%= e(milestone, "dueOn", "No due date") %>
+                {e(milestone, "dueOn", "No due date")}
               </span>
             </div>
           <% end %>
 
           <p class="w-full mt-2 prose">
-            <%= e(milestone, "description", "The description was not provided") %>
+            {e(milestone, "description", "The description was not provided")}
           </p>
 
           <dt class="text-lg">
@@ -162,7 +162,7 @@
 
                   <span class="flex-1 text-base text-primary-content-800 truncate hover:underline">
                     <a target="blank" href={e(issue, :url, "#")}>
-                      <%= e(issue, :title, "Unknown task") %>
+                      {e(issue, :title, "Unknown task")}
                     </a>
                   </span>
                 </div>
